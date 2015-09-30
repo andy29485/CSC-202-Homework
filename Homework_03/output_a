@@ -1,0 +1,4 @@
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homework_03$ java Count_A 
+Enter string: Hello world, this is a test string for the count A program
+There are 3 'a'(or 'A') in the string
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homework_03$

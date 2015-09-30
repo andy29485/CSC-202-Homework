@@ -1,0 +1,33 @@
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homework_02$ java GPS
+Enter the number of satellites: 6.1
+Enter the number of satellites: 4
+Enter the broadcast time: 0.0
+Sat 1 id: 9.0
+Sat 1 id: test
+Sat 1 id: 20
+Sat 1 receive time: 0.001
+Sat 2 id: 19
+Sat 2 receive time: 0.0025min
+Sat 2 receive time: 0.0025
+Sat 3 id: 22
+Sat 3 receive time: 0.0059
+Sat 4 id: 24
+Sat 4 receive time: 0.0012
+ID:    20
+Time:  0.001000s
+Range: 299792.458000m
+
+ID:    19
+Time:  0.002500s
+Range: 749481.145000m
+
+ID:    22
+Time:  0.005900s
+Range: 1768775.502200m
+
+ID:    24
+Time:  0.001200s
+Range: 359750.949600m
+
+Closest satellite(by id): 20
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homework_02$

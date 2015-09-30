@@ -1,0 +1,31 @@
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homework_03$ java Stat < input > output_stat
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homework_03$ cat output_stat 
+Enter a statment - end with a period("."):
+IaeaoueeeeoeoieeaoAieauioueieuIoIaeoeaieeIeaui
+Num vowels: 46
+Size of line: 135
+
+Enter a statment - end with a period("."):
+eeeoaeaeiaiiaoeeeoieeeoAieaeeeoouiooueioeoeieoeeoiiuaaeaioaoeaooeoeieoeaeeeAieoueeiiiaeeooaouioaee
+Num vowels: 98
+Size of line: 322
+
+Enter a statment - end with a period("."):
+ouoeeeiouaeiaaeeaaeeoeoeeeeeoeueaeaaiououaeioueaieaaaeeouaaoieaaeeieaaaeuaauiaaeieeeeee
+Num vowels: 87
+Size of line: 303
+
+Enter a statment - end with a period("."):
+AeaieoueiaioaaiaeouaeaiieieiIo
+Num vowels: 30
+Size of line: 99
+
+
+Total doument statistics:
+Total vowels:                      261
+Ratio of 'e' to other vowels:  1.562874
+Ratio of vowels to consonants: 0.229829
+Number of chars (in bytes):       1718(bytes)
+Statment #2 had the most vowels(98)
+Statment #1 was the larges(by ASCII value)
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homework_03$
