@@ -28,8 +28,9 @@
   *  - for #2, special chars are ~`!@#$%^&*(){}[]+-_=\"/?<>':;
   *                     defined in Stats class as const(final) String
   *  - for #5, special chars *see assumptions for #2*
-  *  - for #6, words are defined as letters surrounded by white space or
-  *                     beggining/end of text
+  *  - for #6, words are defined as letters, "_", or "-" surrounded by white
+  *                     space, beggining/end of text, or some symbols
+  *                     simply put: matches "\b([A-Za-z_-]+)\b"
   *  - for #6, capitalize is defined as first char is uppercase, others lower
   *  - for #7, takes precidence over #6(will happen after, however)
   *  - for #7, first line is defined as: all chars until and including first \n
@@ -41,14 +42,11 @@
   *                     $1 being either "first" or "last" depending on result
   */
 
-public class Main {
-  //In: a String - asumes it only contains a word.
-  //out: same string but capitalized, see line 33
-  public static String capitalize(String strIn) {
-    return strIn.toLowerCase().replaceFirst("^.", String.valueOf(Character.toUpperCase(strIn.charAt(0))));
-  }
+import java.io.*;
 
-  public static void main(String[] args) {
+public class Main {
+
+  public static void main(String[] args) throws IOException {
     //create an input reader object
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
@@ -56,11 +54,16 @@ public class Main {
     //Create string buffer
     StringBuffer strbIn = new StringBuffer();
     
+    //Create string for line input
+    String strLineIn;
+    
     //INPUT:
     //ask for a statment
-    System.out.print("Enter string(200 char min):");
+    System.out.print("Enter string(200 char min): ");
     do {
-      strbIn.append(input.readLine());
+      while((strLineIn = input.readLine()) != null) {
+        strbIn.append(strLineIn);
+      }
     } while(strbIn.length() < 200);   //Read input until 200 char minimum
                                       // is achived
     
@@ -93,14 +96,16 @@ public class Main {
     //  i isn't being used... 
     for(i=0; i<document.length(); i++) {
       if(Stats.spChars.indexOf(document.charAt(i)) < -1)//find special chars
-        document.delete(i) //delete special chars - if they are special chars
+        document.delete(i); //delete special chars - if they are special chars
     }
     
-    
+    //Task #6
+    //All word that are currently in the document, are now capitalized
+    document.capitalize();
     
     //OUTPUT:
     //  Altered string in python style multi-line string quotes
-    System.out.printf("\n\Altered string:\n\"\"\"%s\n\"\"\"\n", document);
+    System.out.printf("\n\nAltered string:\n\"\"\"%s\n\"\"\"\n", document);
     
     //close stream
     input.close();
