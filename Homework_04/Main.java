@@ -33,6 +33,7 @@
   *  - for #6, capitalize is defined as first char is uppercase, others lower
   *  - for #7, takes precidence over #6(will happen after, however)
   *  - for #7, first line is defined as: all chars until and including first \n
+  *                     or to the end if no '\n's are found
   *  - for #8, First then last, w/ space before name part as seperator
   *  - for #9, this part comes after the name(#8)
   *  - for #10, using compareTo method
@@ -96,7 +97,29 @@ public class Main {
         document.delete(i) //delete special chars - if they are special chars
     }
     
+    //Task #07
+    int line_end = document.indexOf('\n', 0);//did not create wrapper for indexOf(int)
+    if(line_end == -1)
+      line_end = document.length();
+    document.replace(0, line_end,
+                     document.substring(0, line_end).toUpperCase());
     
+    //Task #08
+    document.append("Andriy Zasypkin");
+    
+    //Task #09
+    System.out.print("Enter another line:");
+    String strExtraLine = input.readLine();
+    document.append(strExtraLine);
+    
+    //Task #10
+    int nCompare = document.substring(0, line_end).compareTo(strExtraLine);
+    if(nCompare == 0)
+      System.out.println("First and last lines are identical");
+    else if(nCompare < 0)
+      System.out.println("Last line is greater than first line");
+    else
+      System.out.println("Last line is greater than last line");
     
     //OUTPUT:
     //  Altered string in python style multi-line string quotes

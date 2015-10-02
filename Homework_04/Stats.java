@@ -79,6 +79,16 @@ public class Stats {
     return strbObj.indexOf(ch, i);
   }
   
+  //Wraper for append
+  public void append(String str) {
+    strbObj.append(str);
+  }
+  
+  //Wraper for subsring
+  public String substring(int start, int end) {
+    return strbObj.substring(start, end);
+  }
+  
   //Wraper for for replace only one char, no more is needed
   public void replace(int i, String str) {
     strbObj.indexOf(i, i+1, str);
