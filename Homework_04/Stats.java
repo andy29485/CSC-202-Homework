@@ -13,11 +13,6 @@ public class Stats {
     this.strbObj = new StringBuffer();
   }
   
-  //1-arg constructor - copies str to str buff obj
-  public Stats(StringBuffer strObj) {
-    this.strbObj = new StringBuffer(strObj);
-  }
-  
   //Output: Number of letter chars in input
   public int numLetter() {
     int nLetters = 0;
@@ -54,25 +49,25 @@ public class Stats {
   public StringBuffer capitalize() {
     //Patern to match words
     Pattern p = Pattern.compile("\\b[A-Za-z_-]+\\b");
-	  Matcher m = p.matcher(strbObj.toString());
-	  int start_index = 0;
-	  int end_index   = 0;
-	  while (m.find()) {
-	    String strWord  = m.group();
-	    start_index     = m.start();
-	    end_index       = start_index + strWord.length();
-	    
-	    //Capitalize word -- make word lower, then make first letter upper
-	    strWord = strWord.toLowerCase();
+    Matcher m = p.matcher(strbObj.toString());
+    int start_index = 0;
+    int end_index   = 0;
+    while (m.find()) {
+      String strWord  = m.group();
+      start_index     = m.start();
+      end_index       = start_index + strWord.length();
+      
+      //Capitalize word -- make word lower, then make first letter upper
+      strWord = strWord.toLowerCase();
       strWord = strWord.replaceFirst("^.", String.valueOf(
                                              Character.toUpperCase(
                                              strWord.charAt(0))));
-	    
-	    //Change original text to contain capitalized word
-	    strbObj.replace(start_index, end_index, strWord);
-	  }
-	  //Technialy not needed, but in the case that it is chained with something
-	  //  else, the StringBuffer will be returned
+      
+      //Change original text to contain capitalized word
+      strbObj.replace(start_index, end_index, strWord);
+    }
+    //Technialy not needed, but in the case that it is chained with something
+    //  else, the StringBuffer will be returned
     return strbObj;
   }
   
@@ -90,9 +85,19 @@ public class Stats {
     return strbObj.indexOf(String.valueOf(ch), i);
   }
   
-  //Wraper for for replace only one char, no more is needed
-  public void replace(int i, String str) {
-    strbObj.replace(i, i+1, str);
+  //Wraper for append
+  public void append(String str) {
+    strbObj.append(str);
+  }
+  
+  //Wraper for subsring
+  public String substring(int start, int end) {
+    return strbObj.substring(start, end);
+  }
+  
+  //Wraper for for replace
+  public void replace(int start, int end, String str) {
+    strbObj.replace(start, end, str);
   }
   
   //Wraper for deleteCharAt

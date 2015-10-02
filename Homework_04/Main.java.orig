@@ -52,28 +52,28 @@ public class Main {
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
     
-    //Create stats obj
-    Stats document = new Stats();
+    //Create string buffer
+    StringBuffer strbIn = new StringBuffer();
+    
+    //Create string for line input
+    String strLineIn;
     
     //INPUT:
     //ask for a statment
-    System.out.println("Enter string(200 char min):");
+    System.out.print("Enter string(200 char min): ");
     do {
-      document.append(input.readLine()+"\n");
-    } while(document.length() < 200); //Read input until 200 char minimum
+      while((strLineIn = input.readLine()) != null) {
+        strbIn.append(strLineIn);
+      }
+    } while(strbIn.length() < 200);   //Read input until 200 char minimum
                                       // is achived
+    
+    //Create stats obj - to compute stats
+    Stats document = new Stats(strbIn);
     
     //OUTPUT:
     //  Original string in python style multi-line string quotes
-    System.out.printf("\n\nOriginal string:\n\"\"\"\n%s\"\"\"\n\n", document);
-    
-    //Task #09(part 1/2)
-    //INPUT:
-    //  get another line
-    //according to assumptions, another line has to be inputed before
-    //  any stats are calculated
-    System.out.print("Enter another line:");
-    String strExtraLine = input.readLine();
+    System.out.printf("\n\nOriginal string:\n\"\"\"%s\n\"\"\"\n\n", document);
     
     //Task #01
     System.out.printf("Number of uppercase chars in String: %d\n",
@@ -86,10 +86,10 @@ public class Main {
     //Task #03,04
     System.out.print("Positions(indices) of \"$\" in document:\n");
     int i=-1;
-    while((i=document.indexOf('$', i)) > -1) {
-      System.out.printf(" %d", i); //print indices(3)
-      document.replace(i, i+1, "#"); //replace found '$' with '#'(4)
-    }
+    do {
+      System.out.printf(" %d", i=document.indexOf('$', i)); //print indices(3)
+      document.replace(i, "#"); //replace found '$' with '#'(4)
+    } while(i>-1);
     System.out.println();
     
     //Task #05
@@ -100,10 +100,11 @@ public class Main {
         document.delete(i); //delete special chars - if they are special chars
     }
     
+<<<<<<< HEAD
     //Task #6
     //All word that are currently in the document, are now capitalized
     document.capitalize();
-    
+=======
     //Task #07
     int line_end = document.indexOf('\n', 0);//did not create wrapper for indexOf(int)
     if(line_end == -1)
@@ -112,12 +113,12 @@ public class Main {
                      document.substring(0, line_end).toUpperCase());
     
     //Task #08
-    document.append("Andriy Zasypkin\n");
+    document.append("Andriy Zasypkin");
     
-    //Task #09(part 2/2)
-    //Now that all the stats(that do not involve extra line) are calculated,
-    //  the extra line can be appended
-    document.append(strExtraLine+"\n");
+    //Task #09
+    System.out.print("Enter another line:");
+    String strExtraLine = input.readLine();
+    document.append(strExtraLine);
     
     //Task #10
     int nCompare = document.substring(0, line_end).compareTo(strExtraLine);
@@ -126,11 +127,12 @@ public class Main {
     else if(nCompare < 0)
       System.out.println("Last line is greater than first line");
     else
-      System.out.println("First line is greater than last line");
+      System.out.println("Last line is greater than last line");
+>>>>>>> origin/master
     
     //OUTPUT:
     //  Altered string in python style multi-line string quotes
-    System.out.printf("\n\nAltered string:\n\"\"\"\n%s\"\"\"\n", document);
+    System.out.printf("\n\nAltered string:\n\"\"\"%s\n\"\"\"\n", document);
     
     //close stream
     input.close();
