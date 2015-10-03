@@ -16,7 +16,7 @@
   *    09) ask user to add line of text
   *    10) compare 'it'(line from #9) with first line
   *
-  * Problem Assumptions
+  * Problem Assumptions:
   *  - If input size is > 200 char, there is /NO/ need to shorten it
   *  - Intput/Output will be as follows:
   *      * IN:  200(+) char text
