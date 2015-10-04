@@ -105,7 +105,7 @@ public class Main {
     document.capitalize();
     
     //Task #07
-    int line_end = document.indexOf('\n', 0);//did not create wrapper for indexOf(int)
+    int line_end = document.indexOf('\n', 0); //no wrapper for indexOf(int)
     if(line_end == -1)
       line_end = document.length();
     document.replace(0, line_end,
