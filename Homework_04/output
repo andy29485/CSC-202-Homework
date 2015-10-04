@@ -1,0 +1,50 @@
+Enter string(200 char min):
+hello
+world
+this costs $500 + $80 tax 
+with a t0ta*l of $580. A_LONG_WORD AlSo-a-LoNg-woRd.
+some more text
+some sy\\mbo**ls (: ;) <=> @ 
+and more: !@#$%^&*""
+'in quotes'
+is this not 200 chars?
+It should ; be NOW!
+
+Original string:
+"""
+hello
+world
+this costs $500 + $80 tax 
+with a t0ta*l of $580. A_LONG_WORD AlSo-a-LoNg-woRd.
+some more text
+some sy\\mbo**ls (: ;) <=> @ 
+and more: !@#$%^&*""
+'in quotes'
+is this not 200 chars?
+It should ; be NOW!
+"""
+
+Enter another line: LAST LINE
+Number of uppercase chars in String: 18
+Number of letters in String: 120
+Number of special chars in String: 38
+Positions(indices) of "$" in document:
+ 23 30 56 150
+Last line is greater than first line
+
+
+Altered string:
+"""
+HELLO
+World
+This Costs #500 + #80 Tax 
+With A t0ta*L Of #580. A_long_word Also-a-long-word.
+Some More Text
+Some Sy\\Mbo**Ls (: ;) <=> @ 
+And More: !@##%^&*""
+'In Quotes'
+Is This Not 200 Chars?
+It Should ; Be Now!
+Andriy Zasypkin
+LAST LINE
+"""

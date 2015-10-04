@@ -72,7 +72,7 @@ public class Main {
     //  get another line
     //according to assumptions, another line has to be inputed before
     //  any stats are calculated
-    System.out.print("Enter another line:");
+    System.out.print("Enter another line: ");
     String strExtraLine = input.readLine();
     
     //Task #01
@@ -94,7 +94,7 @@ public class Main {
     
     //Task #05
     //I though about using j in for loop since i is taken, but
-    //  i isn't being used... 
+    //  i isn't being used...
     for(i=0; i<document.length(); i++) {
       if(Stats.spChars.indexOf(document.charAt(i)) < -1)//find special chars
         document.delete(i); //delete special chars - if they are special chars
