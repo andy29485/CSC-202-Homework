@@ -21,10 +21,10 @@
   *             -96.9
   *
   *            Invalid:
-  *              09
-  *              08.7 (because of leading zero)
-  *              +7
-  *              .
+  *              9   (no decimal point)
+  *              +7. (plus in front - not acceptable by my standards)
+  *              .   (not sure how this can be concidered a bse 10 number
+  *                   in the forst place)
   */
 
 import java.io.*;
@@ -41,7 +41,7 @@ public class Main {
       strValue = input.readLine();
     } while(strValue == null);
     
-    if(strValue.matches("^-?([1-9]\d*\.\d*|0?\.\d+)$")) {
+    if(strValue.matches("-?(\\d*\\.\\d+|\\d+\\.)")) {
       double dValue = Double.valueOf(strValue).doubleValue();
       System.out.printf("You entered %f - a double\n", dValue);
     }
