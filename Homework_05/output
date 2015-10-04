@@ -1,0 +1,52 @@
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: 9
+You entered 9 - an interger
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: 9.0
+You entered 9.000000 - a double
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: 8.
+You entered 8.000000 - a double
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: .7
+You entered 0.700000 - a double
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: -8
+you did not enter a number
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: -20
+you did not enter a number
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: -2.000
+You entered -2.000000 - a double
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: -01.02
+You entered -1.020000 - a double
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: -0
+you did not enter a number
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: -.6
+You entered -0.600000 - a double
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: .
+you did not enter a number
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: hello
+you did not enter a number
+
+az@ASUS-K55A:~/Dropbox/School/CS/CSC_202/Homeworks/Homework_05$ java Main
+Enter a number: 241
+You entered 241 - an interger
+
