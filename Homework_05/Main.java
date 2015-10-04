@@ -34,22 +34,27 @@ public class Main {
     //create an input reader object
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
-    String strValue;
+    String strValue; //The string that will hold the input
     
+    //INPUT:
+    //  ask for a number
+    //  read a string
     System.out.print("Enter a number: ");
     do {    
       strValue = input.readLine();
-    } while(strValue == null);
+    } while(strValue == null);//readLine kept returning null
     
-    if(strValue.matches("-?(\\d*\\.\\d+|\\d+\\.)")) {
-      double dValue = Double.valueOf(strValue).doubleValue();
-      System.out.printf("You entered %f - a double\n", dValue);
+                                                      //If input matches
+    if(strValue.matches("-?(\\d*\\.\\d+|\\d+\\.)")) { //  double/float pattern
+      double dValue = Double.valueOf(strValue).doubleValue();//create double
+      System.out.printf("You entered %f - a double\n", dValue);//print output
     }
-    else if(strValue.matches("\\d+")) {
-      int nValue = Integer.valueOf(strValue).intValue();
-      System.out.printf("You entered %d - an interger\n", nValue);
+    else if(strValue.matches("\\d+")) { //If input is not a double,
+                                        //  but is a number - it's an int
+      int nValue = Integer.valueOf(strValue).intValue();//create int
+      System.out.printf("You entered %d - an interger\n", nValue);//print output
     } 
-    else {
+    else { //The user did not follow directions - exit with an error
       System.out.println("you did not enter a number");
       System.exit(1);
     }
