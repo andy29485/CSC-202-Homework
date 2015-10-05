@@ -49,7 +49,7 @@ public class Main {
       double dValue = Double.valueOf(strValue).doubleValue();//create double
       System.out.printf("You entered %f - a double\n", dValue);//print output
     }
-    else if(strValue.matches("\\d+")) { //If input is not a double,
+    else if(strValue.matches("-?\\d+")) { //If input is not a double,
                                         //  but is a number - it's an int
       int nValue = Integer.valueOf(strValue).intValue();//create int
       System.out.printf("You entered %d - an interger\n", nValue);//print output
