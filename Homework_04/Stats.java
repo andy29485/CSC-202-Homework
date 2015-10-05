@@ -71,46 +71,46 @@ public class Stats {
     return strbObj;
   }
   
-  //Wrapers - this a sizable section.
+  //Wrappers - this a sizable section.
   //  Should I have made stats extend StringBuffer?
   //  Oh wait, I can't it's a final class, thanks oracle
   
-  //Wraper of length
+  //Wrapper of length
   public int length() {
     return strbObj.length();
   }
   
-  //Wraper for indexOf
+  //Wrapper for indexOf
   public int indexOf(char ch, int i) {
     return strbObj.indexOf(String.valueOf(ch), i);
   }
   
-  //Wraper for append
+  //Wrapper for append
   public void append(String str) {
     strbObj.append(str);
   }
   
-  //Wraper for subsring
+  //Wrapper for subsring
   public String substring(int start, int end) {
     return strbObj.substring(start, end);
   }
   
-  //Wraper for for replace
+  //Wrapper for for replace
   public void replace(int start, int end, String str) {
     strbObj.replace(start, end, str);
   }
   
-  //Wraper for deleteCharAt
-  public void delete(int i) {//sice it is a wraper I can call it delete
+  //Wrapper for deleteCharAt
+  public void delete(int i) {//sice it is a wrapper I can call it delete
     strbObj.deleteCharAt(i); //  instead of deleteCharAt - as delete is
   }                          //  shorter
   
-  //Wraper for charAt
+  //Wrapper for charAt
   public char charAt(int i) {
     return strbObj.charAt(i);
   }
   
-  //For output uses(yep - a wraper)
+  //For output uses(yep - a wrapper)
   public String toString() {
     return strbObj.toString();
   }
