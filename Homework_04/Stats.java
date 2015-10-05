@@ -48,26 +48,15 @@ public class Stats {
   
   public StringBuffer capitalize() {
     //Patern to match words
-    Pattern p = Pattern.compile("\\b[A-Za-z_-]+\\b");
+    Pattern p = Pattern.compile("\\b([A-Za-z_-])([A-Za-z_-]*)\\b");
     Matcher m = p.matcher(strbObj.toString());
-    int start_index = 0;
-    int end_index   = 0;
     while (m.find()) {
-      String strWord  = m.group();
-      start_index     = m.start();
-      end_index       = start_index + strWord.length();
-      
-      //Capitalize word -- make word lower, then make first letter upper
-      strWord = strWord.toLowerCase();
-      strWord = strWord.replaceFirst("^.", String.valueOf(
-                                             Character.toUpperCase(
-                                             strWord.charAt(0))));
       
       //Change original text to contain capitalized word
-      strbObj.replace(start_index, end_index, strWord);
+      strbObj.replace(m.start(), m.end(),
+                      m.group(1).toUpperCase.concat(m.group(2)));
     }
-    //Technialy not needed, but in the case that it is chained with something
-    //  else, the StringBuffer will be returned
+    
     return strbObj;
   }
   
@@ -86,8 +75,8 @@ public class Stats {
   }
   
   //Wrapper for append
-  public void append(String str) {
-    strbObj.append(str);
+  public StringBuffer append(String str) {
+    return strbObj.append(str);
   }
   
   //Wrapper for subsring
@@ -96,13 +85,13 @@ public class Stats {
   }
   
   //Wrapper for for replace
-  public void replace(int start, int end, String str) {
-    strbObj.replace(start, end, str);
+  public StringBuffer replace(int start, int end, String str) {
+    return strbObj.replace(start, end, str);
   }
   
   //Wrapper for deleteCharAt
-  public void delete(int i) {//sice it is a wrapper I can call it delete
-    strbObj.deleteCharAt(i); //  instead of deleteCharAt - as delete is
+  public StringBuffer delete(int i) {//sice it is a wrapper I can call it delete
+    return strbObj.deleteCharAt(i); //  instead of deleteCharAt - as delete is
   }                          //  shorter
   
   //Wrapper for charAt
