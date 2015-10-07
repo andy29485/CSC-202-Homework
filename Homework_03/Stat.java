@@ -4,6 +4,35 @@
 
 import java.io.*;
 
+/** Description:
+  *  Read 4 statements
+  *    - strings that end with a period('.')
+  *    - minimum 15 words per statment
+  *
+  *  Perform tasks
+  *     #01 - find # of vowels in each statment and display them as they
+  *             are found
+  *     #02 - find total # of vowels and print
+  *     #03 - print ratio of 'E'(and 'e') to all other vowels
+  *     #04 - print ratio of vowels to concenents
+  *     #05 - print which statment has the most vowels
+  *     #06 - list lize of each statment
+  *     #07 - print which line is the larges in the document
+  *     #08 - print number of bytes used to store document
+  *
+  * Assumptions:
+  *   for #1   - vowels exclude 'y'
+  *   for #1   - print as they are found means
+  *                when one is found print it(the vowel)
+  *   for #1,2 - these stats will be printed near the end
+  *   for #3   - "all other vowels" excludes 'E'
+  *   for #3,4 - done as decimals(floats or doubles) - not int:int
+  *   for #5   - in this case indicies start at 1 - first statment is 1 not 0
+  *   for #6   - size as in length - number of chars
+  *   for #7   - based on case SENSITIVE, ASCII comparison
+  *   for #8   - chars are in unicode -> #chars * 2 = #bytes used
+  */
+
 public class Stat {
   public static String getStatment(BufferedReader input) throws IOException {
     StringBuffer strbIn = new StringBuffer("");

@@ -4,6 +4,15 @@
 
 import java.io.*;
 
+/** Description:
+  *  input a string
+  *  count number of 'a's in input(case insensitive)
+  *  print counted number
+  *
+  * Assumptions:
+  *   there will only be a single line of input
+  */
+
 public class Count_A {
   public static void main(String[] args) throws IOException {
     //create an input reader object
