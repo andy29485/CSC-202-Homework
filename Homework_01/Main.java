@@ -2,6 +2,19 @@
 //2015-08-27
 //Homework 01
 
+/** Description:
+  *   Create a class that stores a movie
+  *     - title
+  *     - actors(stars)
+  *     - rating(G,PG,PG-13,...)
+  *     - reviews
+  *     - show time[s]
+  *  Class must have accessor and mutator methods
+  *
+  * Assumptions:
+  *   Movies and movie metadata can be hard coded
+  */
+
 public class Main {
   public static void printMovie(Movie movie){
     //Print a nice table for the movie
