@@ -2,12 +2,22 @@
 //2015-09-06
 //Homework 02
 
-/*DESCIPTION:
- *  Using broadcast time and receive times
- *  figure out a satellite's pseudo range,
- *  also find the closest satellite within
- *  a group of satellite
- */
+/** DESCIPTION:
+  *   Using broadcast time and receive times
+  *   figure out a satellite's pseudo range,
+  *   also find the closest satellite within
+  *   a group of satellite
+  *   Create a class that stores a movie
+  *     - title
+  *     - actors(stars)
+  *     - rating(G,PG,PG-13,...)
+  *     - reviews
+  *     - show time[s]
+  *   Class must have accessor and mutator methods
+  *
+  * Assumptions:
+  *   There may be more than 4 sats(input number)
+  */
 
 import java.io.*;
 
