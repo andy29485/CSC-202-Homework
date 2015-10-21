@@ -22,9 +22,9 @@ public class Database {
     
     String line;
     while((line = br.readLine()) != null) { //while a line is read(until EOF)
-      Employee tmp_emp = new Employee(); //create a temporary ref to a new 
-      tmp_emp.set(line);                 // Employee and set metadata from
-      employees.add(tmp_emp);            // line read - then add to list
+      Employee tmp_emp = new Employee();    //create a temporary ref to a new 
+      tmp_emp.set(line);                    // Employee and set metadata from
+      employees.add(tmp_emp);               // line read - then add to list
     }
     
     br.close();
