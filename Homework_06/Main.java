@@ -39,11 +39,23 @@ public class Main {
     //Create an empty database
     Database db = new Database();
     
+    //Create a file obj - for checks;
+    File f;
+    
     //INPUT:
     // a file name
     //read db from user inuted file
-    System.out.print("Enter a filename: ");
-    db.open(input.readLine());
+    do {
+      System.out.print("Enter a filename: ");
+      f = new File(input.readLine());
+      if(!f.exists()) {
+        System.out.printf("\"%s\" does not exist exists - skipping\n");
+      }
+      else if(f.isDirectory()) {
+        System.out.printf("\"%s\" exists, but it's a directory\n");
+      }
+    } while(f.isDirectory());
+    db.open(f.getPath());
     
     //print contents of database
     db.print();
@@ -74,8 +86,16 @@ public class Main {
     //add record to db
     db.add(tmp_emp);
     
-    //save to "db4"
-    db.save("db4");
+    do {
+      System.out.print("\nEnter a filename: ");
+      f = new File(input.readLine());
+      if(f.isDirectory()) {
+        System.out.printf("\"%s\" exists, but it's a directory\n");
+      }
+    } while(!f.isDirectory());
+    
+    //save to entered db
+    db.save(f.getPath());
     
     input.close();
     System.exit(0);
