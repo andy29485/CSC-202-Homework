@@ -1,0 +1,51 @@
+Enter a filename: db3
+Employee #0148:
+Name:          Cecil Diana
+Age:           32
+Salary:        $49.68/hour
+Contract Type: Part-time
+
+Employee #12435:
+Name:          Emylee Walters
+Age:           25
+Salary:        $22.06/hour
+Contract Type: Part-time
+
+Employee #12721:
+Name:          Gerek Tarsitano
+Age:           50
+Salary:        $45.95/hour
+Contract Type: Full-time
+
+Employee #16470:
+Name:          Orella Pattullo
+Age:           32
+Salary:        $92.46/hour
+Contract Type: Full-time
+
+Employee #0929:
+Name:          Valentin Kooris
+Age:           26
+Salary:        $60.66/hour
+Contract Type: Part-time
+
+Employee #2951:
+Name:          Adriana Faraway
+Age:           37
+Salary:        $54.07/hour
+Contract Type: Full-time
+
+Employee #18999:
+Name:          Graig Wypij
+Age:           41
+Salary:        $75.18/hour
+Contract Type: Full-time
+
+First Name: Andriy 
+Last Name: Zasypkin
+ID: 437        
+Age: 111
+Salary: 234.8
+Are you a full time worker[y/n]: Yes
+
+Enter a filename: db4
