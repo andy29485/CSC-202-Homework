@@ -1,0 +1,3 @@
+Enter a filename of an existing char-based file: test_file.txt
+       filename | smallest |  largest |   diff |          chars |    words |   blocks
+  test_file.txt |       28 |      144 |    116 |            352 |       73 |        2

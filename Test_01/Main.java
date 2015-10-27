@@ -29,6 +29,24 @@ public class Main {
     
     FileStats stats = new FileStats(strFileIn);
     
-    input.close()
+    System.out.printf("%15s |%9s |%9s |%7s |%15s |%9s |%9s\n",
+                      "filename",
+                      "smallest",
+                      "largest",
+                      "diff",
+                      "chars",
+                      "words",
+                      "blocks");
+    
+    System.out.printf("%15s |%9d |%9d |%7d |%15d |%9d |%9d\n",
+                      stats.getFileName(),
+                      stats.getShortestSize(),
+                      stats.getLongestSize(),
+                      stats.getDiff(),
+                      stats.getChars(),
+                      stats.getWords(),
+                      stats.getBlocks());
+    
+    input.close();
   }
 }
