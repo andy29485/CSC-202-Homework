@@ -29,6 +29,60 @@ class FileStats {
       System.exit(0);
     }
     
-    FileInputStream fs = new FileInputStream(strFileIn);
+    //Open file
+    this.fr = new FileReader(strFileName);
+    this.br = new BufferedReader(fr);
+    
+    //set some default values
+    this.strShortest = "";
+    this.strLongest  = "";
+    this.nChars      = 0;
+    this.nWords      = 0;
+    
+    //Create a container for the line
+    String strLine;
+    
+    //Compute some stats
+    while((strLine = br.readLine()) != null) {
+      if(this.strShortest.length() > strLine.length()
+      || this.strShortest.length() == 0) {
+        this.strShortest = strLine;
+      }
+      if(strLongest.length() < strLine.length()) {
+        this.strLongest = strLine;
+      }
+
+      this.nChars += strLine.length();
+      this.nWords += strLine.split("\\s+").length;
+    }
+  }
+  
+  public String getFileName() {
+    return this.strFileName;
+  }
+  
+  public int getShortestSize() {
+    return this.strShortest.length();
+  }
+  
+  public int getLongestSize() {
+    return this.strLongest.length();
+  }
+  
+  public int getDiff() {
+    return this.strLongest.length() - this.strShortest.length();
+  }
+  
+  public int getChars() {
+    return this.nChars;
+  }
+  
+  public int getWords() {
+    return this.nWords;
+  }
+  
+  public int getBlocks() {
+    return (this.nChars*2+BLOCK_SIZE-1)/BLOCK_SIZE;
+    //(this.nChars*2)/BLOCK_SIZE+((this.nChars*2)%BLOCK_SIZE==0 ? 0 : 1)//Alt
   }
 }

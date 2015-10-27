@@ -1,3 +1,5 @@
+import java.io.*;
+
 public class Main {
   /** Description:
     *   Write a program that read a file and:
@@ -18,7 +20,7 @@ public class Main {
     *   - after changing letters toUpperCase, user must speccify output file
     */
   
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
     
