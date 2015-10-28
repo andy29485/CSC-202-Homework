@@ -44,6 +44,11 @@ class FileStats {
     
     //Compute some stats
     while((strLine = br.readLine()) != null) {
+      //Add a new line char to the end of the string, since it gets stripped
+      //  when being returned by the readLine() method,
+      //But it should still count since it is getting stored in the file
+      strLine += "\n";
+      
       if(this.strShortest.length() > strLine.length()
       || this.strShortest.length() == 0) {
         this.strShortest = strLine;
