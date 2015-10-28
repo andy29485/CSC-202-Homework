@@ -56,7 +56,7 @@ class FileStats {
       if(strLongest.length() < strLine.length()) {
         this.strLongest = strLine;
       }
-
+      
       this.nChars += strLine.length();
       this.nWords += strLine.split("\\s+").length;
     }
@@ -87,7 +87,9 @@ class FileStats {
   }
   
   public int getBlocks() {
-    return (this.nChars*2+BLOCK_SIZE-1)/BLOCK_SIZE;
-    //(this.nChars*2)/BLOCK_SIZE+((this.nChars*2)%BLOCK_SIZE==0 ? 0 : 1)//Alt
+    //Asumes that characters are stored as 8-bit ASCII values,
+    //  so 1 char = 1 byte
+    return (this.nChars+BLOCK_SIZE-1)/BLOCK_SIZE;
+    //(this.nChars)/BLOCK_SIZE+((this.nChars)%BLOCK_SIZE==0 ? 0 : 1)//Alt
   }
 }
