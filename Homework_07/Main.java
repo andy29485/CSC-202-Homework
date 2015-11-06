@@ -16,6 +16,13 @@ public class Main {
     System.out.print("Enter a maximum capacitance value: ");
     double cmax = Double.valueOf(input.readLine()).doubleValue();
 
+    System.out.print("Enter location to save database: ");
+    String filename = input.readLine();
+
+    Database db = new Database(filename);
+
+    db.print();
+    db.save();//TODO - implement save/load
     //close stream
     input.close();
 
