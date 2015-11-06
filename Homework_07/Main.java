@@ -7,12 +7,12 @@ public class Main {
     //create an input reader object
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
-    
-    
-    
+
+
+
     //close stream
     input.close();
-    
+
     System.exit(0);
   }
 }
