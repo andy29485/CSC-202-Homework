@@ -8,7 +8,13 @@ public class Main {
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
 
-
+    //TODO - spellcheck
+    System.out.print("Enter a frequency: ");
+    double f = Double.valueOf(input.readLine()).doubleValue();
+    System.out.print("Enter a minimal capacitance value: ");
+    double cmin = Double.valueOf(input.readLine()).doubleValue();
+    System.out.print("Enter a maximum capacitance value: ");
+    double cmax = Double.valueOf(input.readLine()).doubleValue();
 
     //close stream
     input.close();
