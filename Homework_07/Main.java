@@ -39,27 +39,28 @@ public class Main {
 
     /* Used to generate table
     // default values:
-    //   frequency(Hz):                      16700000
-    //   increment(F):                 0.000000000030
-    //   minimal capacitance value(F): 0.000000000015
-    //   maximum capacitance value(F): 0.000000000365
+    //   frequency(MHz):                 16.7
+    //   increment(pF):                  30
+    //   mi/imal capacitance value(pF):  15
+    //   maximum capacitance value(pF): 365
 
-    System.out.print("Enter a frequency(Hz): ");
-    double f = Double.valueOf(input.readLine()).doubleValue();
-    System.out.print("Enter an increment(F): ");
+    System.out.print("Enter a frequency(MHz): "); //Multiplyed to get to base
+    double f = Double.valueOf(input.readLine()).doubleValue()*1000000.; //unit
+    System.out.print("Enter an increment(pF): ");
     double inc = Double.valueOf(input.readLine()).doubleValue();
-    System.out.print("Enter a minimal capacitance value(F): ");
-    double cmin = Double.valueOf(input.readLine()).doubleValue();
-    System.out.print("Enter a maximum capacitance value(F): ");
-    double cmax = Double.valueOf(input.readLine()).doubleValue();
+    System.out.print("Enter a minimal capacitance value(pF): ");
+    double cmn = Double.valueOf(input.readLine()).doubleValue();
+    System.out.print("Enter a maximum capacitance value(pF): ");
+    double cmx = Double.valueOf(input.readLine()).doubleValue();
 
-    double c = Math.sqrt(cmin*cmax);
+    //Once again, input needs to be converted to base units
+    double c = Math.sqrt(cmn/1000000000000.*cmx/1000000000000.);
     double l = Math.sqrt(Math.pow((2*Math.PI/f), 2)/c);
 
-    for(double i=cmin; i<=cmax; i+=inc) {
-      db.add(l, cmin, i);
+    for(double i=cmn; i<=cmx; i+=inc) {
+      db.add(l, cmn, i);
     }
-    */
+    /*/
 
     System.out.printf("Entry to modify[0-%d]: ", db.size()-1);
     int index = Integer.valueOf(input.readLine()).intValue();
@@ -71,7 +72,7 @@ public class Main {
     db.modify(index).calcC();
 
     System.out.println("Modified database:");
-    db.print();//Print database after the modification
+    db.print();//Print database after the modification */
 
     //db.save(index);//save only the modified entry
     db.save();   //Save entire database
