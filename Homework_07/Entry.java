@@ -19,15 +19,11 @@ public class Entry {
     return this.c = Math.sqrt(cmin*cmax);
   }
 
-  public double calcL() {
-    return this.l = Math.sqrt(Math.pow((2*Math.PI/f, 2)/this.c);//TODO - set f
-  }
-
   public void setCmin(double cmin) {
     this.cmin = cmin;
   }
 
-  public doubl getCmin() {
+  public double getCmin() {
     return this.cmin;
   }
 
@@ -35,7 +31,7 @@ public class Entry {
     this.cmax = cmax;
   }
 
-  public doubl getCmax() {
+  public double getCmax() {
     return this.cmax;
   }
 
