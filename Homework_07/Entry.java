@@ -11,9 +11,9 @@ public class Entry {
   //Default constructor
   public Entry() {
     l    = 0; //Not sure what these values are, but I do have formulas.
-    c    = 0; // I am assuming that the formulas take base units,
-    cmin = 0; // Since input/output will not be in base units, the units will
-    cmax = 0; // be raised/lowered by appropriate power of 10
+    c    = 0;
+    cmin = 0;
+    cmax = 0;
   }
 
   public double calcC() {
@@ -21,19 +21,19 @@ public class Entry {
   }
 
   public void setCmin(double cmin) {
-    this.cmin = cmin/1000000000000.; //Convert to base unit form pF -> F
+    this.cmin = cmin;
   }
 
   public double getCmin() {
-    return this.cmin*1000000000000.; ///Convert from base unit form F -> pF
+    return this.cmin;
   }
 
   public void setCmax(double cmax) {
-    this.cmax = cmax/1000000000000.; //Convert to base unit form pF -> F
+    this.cmax = cmax;
   }
 
   public double getCmax() {
-    return this.cmax*1000000000000.; //Convert from base unit form F -> pF
+    return this.cmax;
   }
 
   public void setL(double l) {

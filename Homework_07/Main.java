@@ -10,7 +10,6 @@ public class Main {
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
 
-    System.out.print("Enter location to save database: ");
     //Create a file obj - for checks;
     File info;
 
@@ -18,7 +17,7 @@ public class Main {
     // a file name
     //read db from user inuted file
     do {
-      System.out.print("Enter a filename: ");
+      System.out.print("Enter location to save database: ");
       info = new File(input.readLine());
       if(!info.exists()) {
         System.out.printf("\"%s\" does not exist exists - will not read\n",
@@ -34,7 +33,7 @@ public class Main {
     if(info.exists())
       db.load();
 
-    System.out.println("From File:");
+    System.out.println("\nFrom File:");
     db.print();//Print database that already exists
 
     /* Used to generate table
@@ -45,7 +44,7 @@ public class Main {
     //   maximum capacitance value(pF): 365
 
     System.out.print("Enter a frequency(MHz): "); //Multiplyed to get to base
-    double f = Double.valueOf(input.readLine()).doubleValue()*1000000.; //unit
+    double f = Double.valueOf(input.readLine()).doubleValue(); //unit
     System.out.print("Enter an increment(pF): ");
     double inc = Double.valueOf(input.readLine()).doubleValue();
     System.out.print("Enter a minimal capacitance value(pF): ");
@@ -53,8 +52,7 @@ public class Main {
     System.out.print("Enter a maximum capacitance value(pF): ");
     double cmx = Double.valueOf(input.readLine()).doubleValue();
 
-    //Once again, input needs to be converted to base units
-    double c = Math.sqrt(cmn/1000000000000.*cmx/1000000000000.);
+    double c = Math.sqrt(cmn*cmx);
     double l = Math.sqrt(Math.pow((2*Math.PI/f), 2)/c);
 
     for(double i=cmn; i<=cmx; i+=inc) {
@@ -62,8 +60,8 @@ public class Main {
     }
     /*/
 
-    System.out.printf("Entry to modify[0-%d]: ", db.size()-1);
-    int index = Integer.valueOf(input.readLine()).intValue();
+    System.out.printf("\nEntry to modify[1-%d]: ", db.size());
+    int index = Integer.valueOf(input.readLine()).intValue() - 1;
 
     System.out.printf("New value for cmax of entry %d in Farads: ", index);
     double new_cmax = Double.valueOf(input.readLine()).doubleValue();
@@ -71,7 +69,7 @@ public class Main {
     db.modify(index).setCmax(new_cmax);
     db.modify(index).calcC();
 
-    System.out.println("Modified database:");
+    System.out.println("\nModified database:");
     db.print();//Print database after the modification */
 
     //db.save(index);//save only the modified entry

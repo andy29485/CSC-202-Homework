@@ -78,7 +78,7 @@ public class Database {
   }
 
   public void print() {
-    System.out.println("    L    |    C    |   Cmin  |   Cmax  ");
+    System.out.println("    L    |    C    |   Cmin  |   Cmax");
     System.out.println("---------------------------------------");
     for(Entry entry : entries) {
       System.out.printf("%8.7f |%8f |%5.0f pF |%5.0f pF\n",
