@@ -3,12 +3,12 @@
 //Homework 07
 
 public class Entry {
-  private double l;
-  private double c;
-  private double cmin;
-  private double cmax;
+  private double l;     //Variables that seem
+  private double c;     //  have something to
+  private double cmin;  //  do with tuning or
+  private double cmax;  //  maybe circuts
 
-  //Default constructor
+  //Default constructor - create 'empty' entry for database
   public Entry() {
     l    = 0; //Not sure what these values are, but I do have formulas.
     c    = 0; // I am assuming that the formulas take base units,
@@ -16,6 +16,7 @@ public class Entry {
     cmax = 0; // be raised/lowered by appropriate power of 10
   }
 
+  //Accessor/modifier methods
   public double calcC() {
     return this.c = Math.sqrt(cmin*cmax);
   }
