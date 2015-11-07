@@ -66,8 +66,8 @@ public class Main {
       double c = Math.sqrt(fn/1000000000000.*fn/1000000000000.);
       double l = Math.sqrt(Math.pow((2*Math.PI/f), 2)/c);
 
-      for(double i=cmn; i<=cmx; i+=inc) { //TODO - fix(see line 9ish)
-        db.add(l, cmn, i);
+      for(double i=fn; i<=fx; i+=inc) {
+        db.add(l, i, fx);
       }
 
       db.save();   //Save entire database
