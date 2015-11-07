@@ -119,10 +119,10 @@ public class Database {
   }
 
   public void print() { //print the database in table format to std out
-    System.out.println("     L     |       C      |   Cmin  |   Cmax");  //header
-    System.out.println("---------------------------------------");//sperator
+    System.out.println("      L      |       C      |    Cmin   |    Cmax");
+    System.out.println("---------------------------------------------------");
     for(Entry entry : entries) {//Print all values whilst formating them
-      System.out.printf("%10.7f |%10.6f pF |%5.0f pF |%5.0f pF\n",
+      System.out.printf("%10.7f H |%10.6f pF |%7.2f pF |%7.2f pF\n",
                         entry.getL(),
                         entry.getC(),
                         entry.getCmin(),
