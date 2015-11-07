@@ -14,15 +14,15 @@ public class Database {
   public Database() { //default database - set filename later
     this.entries  = new ArrayList<Entry>();
     this.filename = "";
-    this.fmin     = ...;
-    this.fmax     = ...;
+    this.fmin     = 0;
+    this.fmax     = 0;
   }
 
   public Database(String filename) { //database from filename(do not load yet)
     this.entries  = new ArrayList<Entry>();
     this.filename = filename;
-    this.fmin     = ...;
-    this.fmax     = ...;
+    this.fmin     = 0;
+    this.fmax     = 0;
   }
 
   public void add(double l, double cmin, double cmax) {
@@ -71,7 +71,7 @@ public class Database {
     RandomAccessFile raf = new RandomAccessFile(this.filename, "rw");
     Entry tmp = entries.get((int)index);//Retrieve entry
 
-    raf.seek(32*index);//seek to postion of entry to write
+    raf.seek(32*index+16);//seek to postion of entry to write
 
     raf.writeDouble(tmp.getL());//Write info on entry
     raf.writeDouble(tmp.getC());
@@ -84,6 +84,10 @@ public class Database {
   public void save() throws IOException {
     //open to write
     RandomAccessFile raf = new RandomAccessFile(this.filename, "rw");
+
+    //Write min/max values for frequency
+    raf.writeDouble(this.fmin);
+    raf.writeDouble(this.fmax);
 
     for(Entry entry : entries) {    //For each entry in database
       raf.writeDouble(entry.getL());//  Write info on entry
@@ -98,6 +102,10 @@ public class Database {
     //open as read only
     RandomAccessFile raf = new RandomAccessFile(this.filename, "r");
     Entry tmp;
+
+	//Read min/max values for frequency
+    this.fmin = raf.readDouble();
+    this.fmax = raf.readDouble();
 
     while(raf.length() > raf.getFilePointer()) {//While there is stuff to read
       tmp = new Entry();                        //  create an empty entry

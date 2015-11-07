@@ -46,10 +46,10 @@ public class Entry {
   }
 
   public void setC(double c) {
-    this.c = c;
+    this.c = c/1000000000000.;
   }
 
   public double getC() {
-    return this.c;
+    return this.c*1000000000000.;
   }
 }

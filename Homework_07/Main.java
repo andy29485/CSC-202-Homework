@@ -57,7 +57,7 @@ public class Main {
     //   maximum capacitance value(pF): 365
 
     System.out.print("Enter a frequency(MHz): "); //Multiplyed to get to base
-    double f = Double.valueOf(input.readLine()).doubleValue(); //unit
+    double f = Double.valueOf(input.readLine()).doubleValue()*1000000.; //unit
     System.out.print("Enter an increment(pF): ");
     double inc = Double.valueOf(input.readLine()).doubleValue();
     System.out.print("Enter a minimal capacitance value(pF): ");
@@ -65,10 +65,11 @@ public class Main {
     System.out.print("Enter a maximum capacitance value(pF): ");
     double fx = Double.valueOf(input.readLine()).doubleValue();
 
-    double c = Math.sqrt(cmn*cmx);
+    //Once again, input needs to be converted to base units
+    double c = Math.sqrt(fn/1000000000000.*fn/1000000000000.);
     double l = Math.sqrt(Math.pow((2*Math.PI/f), 2)/c);
 
-    for(double i=cmn; i<=cmx; i+=inc) { #TODO - fix(see line 9ish)
+    for(double i=cmn; i<=cmx; i+=inc) { //TODO - fix(see line 9ish)
       db.add(l, cmn, i);
     }
     /*/
@@ -90,8 +91,8 @@ public class Main {
     System.out.println("\nModified database:");
     db.print();//Print database after the modification */
 
-    db.save(index);//save only the modified entry
-    //db.save();   //Save entire database
+    //db.save(index);//save only the modified entry
+    db.save();   //Save entire database
 
     //close input stream
     input.close();
