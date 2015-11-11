@@ -31,76 +31,85 @@ public class Main {
     do {
       System.out.print("Enter location to save database: ");
       info = new File(input.readLine());
-      if(!info.exists()) {
-        System.out.printf("\"%s\" does not exist exists - will not read\n",
+      if(info.isDirectory()) {
+        System.out.printf("\"%s\" exists, but it's a directory\n",
                           info.getPath());
       }
-      else if(info.isDirectory()) {
-        System.out.printf("\"%s\" exists, but it's a directory\n",
+      else if(!info.exists()) {
+        System.out.printf("\"%s\" does not exist - will be created\n",
+                          info.getPath());
+      }
+      else {
+        System.out.printf("\"%s\" exists - will be overwriten\n",
                           info.getPath());
       }
     } while(info.isDirectory());
 
     //create database and set the filename for database
-    Database db = new Database(info.getPath());
+    Database db1 = new Database(info.getPath());
 
-    //Load the database form file(if file exists)
-    if(!info.exists()) {
-      // Used to generate table
-      // default values:
-      //   frequency(MHz):                 16.7
-      //   increment(pF):                  30
-      //   minimal capacitance value(pF):  15
-      //   maximum capacitance value(pF): 365
+    // Used to generate table
+    // default values:
+    //   frequency(MHz):                 16.7
+    //   increment(pF):                  30
+    //   minimal capacitance value(pF):  15
+    //   maximum capacitance value(pF): 365
 
-      System.out.print("Enter a frequency(MHz): "); //Multiplyed to get to base
-      double f = Double.valueOf(input.readLine()).doubleValue();
-      System.out.print("Enter an increment(pF): ");
-      double inc = Double.valueOf(input.readLine()).doubleValue();
-      System.out.print("Enter a minimal capacitance value(pF): ");
-      double fn = Double.valueOf(input.readLine()).doubleValue();
-      System.out.print("Enter a maximum capacitance value(pF): ");
-      double fx = Double.valueOf(input.readLine()).doubleValue();
+    System.out.print("Enter a frequency(MHz): "); //Multiplyed to get to base
+    double f = Double.valueOf(input.readLine()).doubleValue();
+    System.out.print("Enter an increment(pF): ");
+    double inc = Double.valueOf(input.readLine()).doubleValue();
+    System.out.print("Enter a minimal capacitance value(pF): ");
+    double cn = Double.valueOf(input.readLine()).doubleValue();
+    System.out.print("Enter a maximum capacitance value(pF): ");
+    double cx = Double.valueOf(input.readLine()).doubleValue();
 
-      double c = Math.sqrt(fn*fn);
-      double l = Math.sqrt(Math.pow((2*Math.PI/f), 2)/c);
+    double c = Math.sqrt(cn*cn);
+    double l = Math.sqrt(Math.pow((2*Math.PI/f), 2)/c);
 
-      for(double i=fn; i<=fx; i+=inc) {
-        db.add(l, i, fx);
-      }
+    double fn = cn;
+    double fx = 2*Math.PI/Math.sqrt(l*cx);
 
-      db.save();   //Save entire database
+    //set minimum and maximum capacitance
+    db1.setCmin(cn);
+    db1.setCmax(cx);
+
+    for(double i=fn; i<=cx; i+=inc) {
+      db1.add(l, i, cx);
     }
-    else { // if specified database file exists
-      //load from file
-      db.load();
 
-      System.out.println("\nFrom File:");
-      db.print();//Print database that already exists
+    db1.save();   //Save entire database
+    
+    Database db2 = new Database();
+    db2.setFilename(info.getPath());
 
-      int index = -1;
+    //load from file
+    db2.load();
 
-      //INPUT:
-      //  ask user which entry they want to modify
-      do {
-        System.out.printf("\nEntry to modify[1-%d]: ", db.size());
-        index  = Integer.valueOf(input.readLine()).intValue() - 1;
-      } while(index > db.size() -1 || index < 0);
+    System.out.println("\nFrom File:");
+    db2.print();//Print database that already exists
 
-      //INPUT:
-      //  get the value of Cmax of entry user wants to modify from the user
-      System.out.printf("New value for cmax of entry %d in pF: ", index);
-      double new_cmax = Double.valueOf(input.readLine()).doubleValue();
+    int index = -1;
 
-      //Set the value of Cmax of entry user wants to modify, and re-calc 'C'
-      db.modify(index).setCmax(new_cmax);
-      db.modify(index).calcC();
+    //INPUT:
+    //  ask user which entry they want to modify
+    do {
+      System.out.printf("\nEntry to modify[1-%d]: ", db2.size());
+      index  = Integer.valueOf(input.readLine()).intValue() - 1;
+    } while(index > db2.size() -1 || index < 0);
 
-      System.out.println("\nModified database:");
-      db.print();//Print database after the modification
+    //INPUT:
+    //  get the value of Cmax of entry user wants to modify from the user
+    System.out.printf("New value for Cmax of entry %d in pF: ", index);
+    double new_cmax = Double.valueOf(input.readLine()).doubleValue();
 
-      db.save(index);//save only the modified entry
-    }
+    //Set the value of Cmax of entry user wants to modify, and re-calc 'C'
+    db2.modify(index, new_cmax);
+
+    System.out.println("\nModified database:");
+    db2.print();//Print database after the modification
+
+    db2.save(index);//save only the modified entry
 
     //close input stream
     input.close();

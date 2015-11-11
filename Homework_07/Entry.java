@@ -5,36 +5,41 @@
 public class Entry {
   private double l;     //Variables that seem
   private double c;     //  have something to
-  private double cmin;  //  do with tuning or
-  private double cmax;  //  maybe circuts
+  private double fmin;  //  do with tuning or
+  private double fmax;  //  maybe circuts
 
   //Default constructor - create 'empty' entry for database
   public Entry() {
     l    = 0; //Not sure what these values are, but I do have formulas.
     c    = 0;
-    cmin = 0;
-    cmax = 0;
+    fmin = 0;
+    fmax = 0;
   }
 
   //Accessor/modifier methods
   public double calcC() {
-    return this.c = Math.sqrt(cmin*cmax);
+    return this.c = Math.sqrt(fmin*fmax);
+  }
+  
+  public void calcF(double cn, double cx) {
+    this.fmin = 2*Math.PI/Math.sqrt(l*cn);
+    this.fmax = 2*Math.PI/Math.sqrt(l*cx);
   }
 
-  public void setCmin(double cmin) {
-    this.cmin = cmin;
+  public void setFmin(double fmin) {
+    this.fmin = fmin;
   }
 
-  public double getCmin() {
-    return this.cmin;
+  public double getFmin() {
+    return this.fmin;
   }
 
-  public void setCmax(double cmax) {
-    this.cmax = cmax;
+  public void setFmax(double fmax) {
+    this.fmax = fmax;
   }
 
-  public double getCmax() {
-    return this.cmax;
+  public double getFmax() {
+    return this.fmax;
   }
 
   public void setL(double l) {
