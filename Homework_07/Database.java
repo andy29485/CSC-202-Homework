@@ -45,7 +45,7 @@ public class Database {
   public void setFilename(String filename) {
     this.filename = filename;
   }
-  
+
   public String getFilename() {
     return this.filename;
   }
@@ -53,15 +53,15 @@ public class Database {
   public void setFmin(double fmin) {
     this.fmin = fmin;
   }
-  
+
   public double getFmin() {
     return this.fmin;
   }
-  
+
   public void setFmax(double fmax) {
     this.fmax = fmax;
   }
-  
+
   public double getFmax() {
     return this.fmax;
   }

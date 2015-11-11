@@ -22,19 +22,19 @@ public class Entry {
   }
 
   public void setCmin(double cmin) {
-    this.cmin = cmin/1000000000000.;
+    this.cmin = cmin;
   }
 
   public double getCmin() {
-    return this.cmin*1000000000000.;
+    return this.cmin;
   }
 
   public void setCmax(double cmax) {
-    this.cmax = cmax/1000000000000.;
+    this.cmax = cmax;
   }
 
   public double getCmax() {
-    return this.cmax*1000000000000.;
+    return this.cmax;
   }
 
   public void setL(double l) {
@@ -46,10 +46,10 @@ public class Entry {
   }
 
   public void setC(double c) {
-    this.c = c/1000000000000.;
+    this.c = c;
   }
 
   public double getC() {
-    return this.c*1000000000000.;
+    return this.c;
   }
 }

@@ -43,7 +43,7 @@ public class Main {
 
     //create database and set the filename for database
     Database db = new Database(info.getPath());
-    
+
     //Load the database form file(if file exists)
     if(!info.exists()) {
       // Used to generate table
@@ -54,7 +54,7 @@ public class Main {
       //   maximum capacitance value(pF): 365
 
       System.out.print("Enter a frequency(MHz): "); //Multiplyed to get to base
-      double f = Double.valueOf(input.readLine()).doubleValue()*1000000.; //unit
+      double f = Double.valueOf(input.readLine()).doubleValue();
       System.out.print("Enter an increment(pF): ");
       double inc = Double.valueOf(input.readLine()).doubleValue();
       System.out.print("Enter a minimal capacitance value(pF): ");
@@ -62,8 +62,7 @@ public class Main {
       System.out.print("Enter a maximum capacitance value(pF): ");
       double fx = Double.valueOf(input.readLine()).doubleValue();
 
-      //Once again, input needs to be converted to base units
-      double c = Math.sqrt(fn/1000000000000.*fn/1000000000000.);
+      double c = Math.sqrt(fn*fn);
       double l = Math.sqrt(Math.pow((2*Math.PI/f), 2)/c);
 
       for(double i=fn; i<=fx; i+=inc) {
@@ -78,10 +77,15 @@ public class Main {
 
       System.out.println("\nFrom File:");
       db.print();//Print database that already exists
+
+      int index = -1;
+
       //INPUT:
       //  ask user which entry they want to modify
-      System.out.printf("\nEntry to modify[1-%d]: ", db.size());
-      int index = Integer.valueOf(input.readLine()).intValue() - 1;
+      do {
+        System.out.printf("\nEntry to modify[1-%d]: ", db.size());
+        index  = Integer.valueOf(input.readLine()).intValue() - 1;
+      } while(index > db.size() -1 || index < 0);
 
       //INPUT:
       //  get the value of Cmax of entry user wants to modify from the user
