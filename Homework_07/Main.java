@@ -56,7 +56,7 @@ public class Main {
     //   maximum capacitance value(pF): 365
 
     System.out.print("Enter a frequency(MHz): "); //Multiplyed to get to base
-    double f = Double.valueOf(input.readLine()).doubleValue();
+    double f = Double.valueOf(input.readLine()).doubleValue()*1000000;
     System.out.print("Enter an increment(pF): ");
     double inc = Double.valueOf(input.readLine()).doubleValue();
     System.out.print("Enter a minimal capacitance value(pF): ");
@@ -64,7 +64,7 @@ public class Main {
     System.out.print("Enter a maximum capacitance value(pF): ");
     double cx = Double.valueOf(input.readLine()).doubleValue();
 
-    double c = Math.sqrt(cn*cx);
+    double c = Math.sqrt(cn/1000000000000.*cx/1000000000000.);
     double l = Math.sqrt(Math.pow((2*Math.PI/f), 2)/c);
 
     //set minimum and maximum capacitance
@@ -97,7 +97,7 @@ public class Main {
 
     //INPUT:
     //  get the value of Cmax of entry user wants to modify from the user
-    System.out.printf("New value for Cmax of entry %d in pF: ", index);
+    System.out.printf("New value for Cmax of entry %d in pF: ", index+1);
     double new_cmax = Double.valueOf(input.readLine()).doubleValue();
 
     //Set the value of Cmax of entry user wants to modify, and re-calc 'C'

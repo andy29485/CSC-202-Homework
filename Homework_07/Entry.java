@@ -22,24 +22,24 @@ public class Entry {
   }
   
   public void calcF(double cn, double cx) {
-    this.fmin = 2*Math.PI/Math.sqrt(l*cn);
-    this.fmax = 2*Math.PI/Math.sqrt(l*cx);
+    this.fmin = 2*Math.PI/Math.sqrt(this.l*cx);
+    this.fmax = 2*Math.PI/Math.sqrt(this.l*cn);
   }
 
   public void setFmin(double fmin) {
-    this.fmin = fmin;
+    this.fmin = fmin/1000000000000.;
   }
 
   public double getFmin() {
-    return this.fmin;
+    return this.fmin*1000000000000.;
   }
 
   public void setFmax(double fmax) {
-    this.fmax = fmax;
+    this.fmax = fmax/1000000000000.;
   }
 
   public double getFmax() {
-    return this.fmax;
+    return this.fmax*1000000000000.;
   }
 
   public void setL(double l) {
@@ -51,10 +51,10 @@ public class Entry {
   }
 
   public void setC(double c) {
-    this.c = c;
+    this.c = c/1000000000000.;
   }
 
   public double getC() {
-    return this.c;
+    return this.c*1000000000000.;
   }
 }
