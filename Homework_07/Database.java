@@ -21,7 +21,7 @@ public class Database {
   public Database(String filename) { //database from filename(do not load yet)
     this.entries  = new ArrayList<Entry>();
     this.filename = filename;
-    this.cmin     = 0;
+    this.cmin     = 0; //but still some default values
     this.cmax     = 0;
   }
 
@@ -54,19 +54,19 @@ public class Database {
   }
 
   public void setCmin(double cmin) {
-    this.cmin = cmin/1000000000000.;
+    this.cmin = cmin/1000000000000.; //conversion to/from base units
   }
 
   public double getCmin() {
-    return this.cmin*1000000000000.;
+    return this.cmin*1000000000000.; //conversion to/from base units
   }
 
   public void setCmax(double cmax) {
-    this.cmax = cmax/1000000000000.;
+    this.cmax = cmax/1000000000000.; //conversion to/from base units
   }
 
   public double getCmax() {
-    return this.cmax*1000000000000.;
+    return this.cmax*1000000000000.; //conversion to/from base units
   }
 
   public void save(long index) throws IOException {

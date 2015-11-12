@@ -42,12 +42,16 @@ public class Main {
 
       //INPUT:
       // a file name
-      //read db from user inuted file
+      // and keep doing so until they give a good file
       do {
          System.out.print("Enter location to save database: ");
          info = new File(input.readLine());
          if(info.isDirectory()) {
             System.out.printf("\"%s\" exists, but it's a directory\n",
+                               info.getPath());
+         }
+         else if(!info.isReadable() || ! info.isWritable()) {
+            System.out.printf("\"%s\" cannot be read/writen to\n",
                                info.getPath());
          }
          else if(!info.exists()) {
@@ -58,7 +62,7 @@ public class Main {
             System.out.printf("\"%s\" exists - will be overwriten\n",
                                info.getPath());
          }
-      } while(info.isDirectory());
+      } while(info.isDirectory() || !info.isReadable() || ! info.isWritable());
 
       //create database and set the filename for database
       Database db1 = new Database(info.getPath());
@@ -81,6 +85,7 @@ public class Main {
       System.out.print("Enter a maximum capacitance value(pF): ");
       double cx = Double.valueOf(input.readLine()).doubleValue();
 
+      //Calculate an initial "L" value(and "C" to get "L")
       double c = Math.sqrt(cn/1000000000000.*cx/1000000000000.);
       double l = Math.sqrt(Math.pow((2*Math.PI/f), 2)/c);
 
@@ -88,14 +93,17 @@ public class Main {
       db1.setCmin(cn);
       db1.setCmax(cx);
 
-      for(double i=cn; i<=cx; i+=inc) {
-         db1.add(l, i, cx);
+      for(double i=cn; i<=cx; i+=inc) {//iterate Cmin form Cmin to Cmax
+         db1.add(l, i, cx);//add such entry to database
       }
 
-      db1.save();   //Save entire database
+      db1.save(); //Save entire database
 
+      db1 = null; //Delete first database
+
+      //create a second database for actual random access and modifications
       Database db2 = new Database();
-      db2.setFilename(info.getPath());
+      db2.setFilename(info.getPath());//same path as before
 
       //load from file
       db2.load();
@@ -103,6 +111,7 @@ public class Main {
       System.out.println("\nFrom File:");
       db2.print();//Print database that already exists
 
+      //set an initial index(which is invalid
       int index = -1;
 
       //INPUT:
@@ -110,7 +119,7 @@ public class Main {
       do {
          System.out.printf("\nEntry to modify[1-%d]: ", db2.size());
          index  = Integer.valueOf(input.readLine()).intValue() - 1;
-      } while(index > db2.size() -1 || index < 0);
+      } while(index > db2.size() - 1 || index < 0);
 
       //INPUT:
       //  get the value of Cmax of entry user wants to modify from the user
