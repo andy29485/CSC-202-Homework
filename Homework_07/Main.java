@@ -64,17 +64,14 @@ public class Main {
     System.out.print("Enter a maximum capacitance value(pF): ");
     double cx = Double.valueOf(input.readLine()).doubleValue();
 
-    double c = Math.sqrt(cn*cn);
+    double c = Math.sqrt(cn*cx);
     double l = Math.sqrt(Math.pow((2*Math.PI/f), 2)/c);
-
-    double fn = cn;
-    double fx = 2*Math.PI/Math.sqrt(l*cx);
 
     //set minimum and maximum capacitance
     db1.setCmin(cn);
     db1.setCmax(cx);
 
-    for(double i=fn; i<=cx; i+=inc) {
+    for(double i=cn; i<=cx; i+=inc) {
       db1.add(l, i, cx);
     }
 

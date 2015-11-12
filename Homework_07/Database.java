@@ -123,7 +123,7 @@ public class Database {
     raf.close();//close stream
   }
 
-  public void print() { //print the database in table format to std out
+  public void print() {//print the database in a table format to std out
     System.out.println("      L      |       C      |    Fmin   |    Fmax");
     System.out.println("---------------------------------------------------");
     for(Entry entry : entries) {//Print all values whilst formating them
