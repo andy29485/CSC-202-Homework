@@ -25,8 +25,8 @@ public class Entry {
     //cx to fn and cn to fx
     // because capacitor max is *inversely* proportional to frequency min
     //     and capacitor min is *inversely* proportional to frequency max
-    this.fmin = 2*Math.PI/Math.sqrt(this.l*cx);
-    this.fmax = 2*Math.PI/Math.sqrt(this.l*cn);
+    this.setFmin(2*Math.PI/Math.sqrt(this.l*cx));
+    this.setFmax(2*Math.PI/Math.sqrt(this.l*cn));
   }
 
   public void setFmin(double fmin) {

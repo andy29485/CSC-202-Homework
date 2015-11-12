@@ -28,14 +28,16 @@ public class Database {
   public void add(double l, double cmin, double cmax) {
     Entry tmp = new Entry();//create tmp empty entry
     tmp.setL(l);            //  fill the empty entry
-    tmp.calcF(cmin, cmax);
-    tmp.calcC();
+    tmp.calcF(cmin, cmax);  //    - calculate Fmin/Fmax
+    tmp.calcC();            //    - calculate C
     entries.add(tmp);       //  add filled entry to database
   }
 
   public void modify(int index, double cx) {
-    this.cmax = cx;
-    entries.get(index).calcF(cmin, cmax);
+    this.setCmax(cx);                               //I don't even know what
+                                                    //  I am doing
+    entries.get(index).calcF(getCmin(), getCmax()); //re-calc Fmin/max of
+                                                    //  selected entry
     entries.get(index).calcC();
   }
 
@@ -52,19 +54,19 @@ public class Database {
   }
 
   public void setCmin(double cmin) {
-    this.cmin = cmin;
+    this.cmin = cmin/1000000000000.;
   }
 
   public double getCmin() {
-    return this.cmin;
+    return this.cmin*1000000000000.;
   }
 
   public void setCmax(double cmax) {
-    this.cmax = cmax;
+    this.cmax = cmax/1000000000000.;
   }
 
   public double getCmax() {
-    return this.cmax;
+    return this.cmax*1000000000000.;
   }
 
   public void save(long index) throws IOException {
