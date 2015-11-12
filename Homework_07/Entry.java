@@ -20,26 +20,29 @@ public class Entry {
   public double calcC() {
     return this.c = Math.sqrt(fmin*fmax);
   }
-  
+
   public void calcF(double cn, double cx) {
-    this.fmin = 2*Math.PI/Math.sqrt(l*cn);
-    this.fmax = 2*Math.PI/Math.sqrt(l*cx);
+    //cx to fn and cn to fx
+    // because capacitor max is *inversely* proportional to frequency min
+    //     and capacitor min is *inversely* proportional to frequency max
+    this.fmin = 2*Math.PI/Math.sqrt(this.l*cx);
+    this.fmax = 2*Math.PI/Math.sqrt(this.l*cn);
   }
 
   public void setFmin(double fmin) {
-    this.fmin = fmin;
+    this.fmin = fmin/1000000000000.;
   }
 
   public double getFmin() {
-    return this.fmin;
+    return this.fmin*1000000000000.;
   }
 
   public void setFmax(double fmax) {
-    this.fmax = fmax;
+    this.fmax = fmax/1000000000000.;
   }
 
   public double getFmax() {
-    return this.fmax;
+    return this.fmax*1000000000000.;
   }
 
   public void setL(double l) {
@@ -51,10 +54,10 @@ public class Entry {
   }
 
   public void setC(double c) {
-    this.c = c;
+    this.c = c/1000000000000.;
   }
 
   public double getC() {
-    return this.c;
+    return this.c*1000000000000.;
   }
 }

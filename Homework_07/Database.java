@@ -108,7 +108,7 @@ public class Database {
     RandomAccessFile raf = new RandomAccessFile(this.filename, "r");
     Entry tmp;
 
-	//Read min/max values for frequency
+	  //Read min/max values for frequency
     this.cmin = raf.readDouble();
     this.cmax = raf.readDouble();
 
