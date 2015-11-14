@@ -1,41 +1,42 @@
-Enter location to save database: tuning.db
-"tuning.db" does not exist - will be created
 Enter a frequency(MHz): 16.7
 Enter an increment(pF): 30
 Enter a minimal capacitance value(pF): 15
 Enter a maximum capacitance value(pF): 365
+Enter location to save database: tuning.db
 
-From File:
-      L      |       C      |    Fmin   |    Fmax
----------------------------------------------------
- 0.0437389 H |  3.492610 pF |   1.57 Hz |   7.76 Hz
- 0.0437389 H |  2.653810 pF |   1.57 Hz |   4.48 Hz
- 0.0437389 H |  2.335649 pF |   1.57 Hz |   3.47 Hz
- 0.0437389 H |  2.147216 pF |   1.57 Hz |   2.93 Hz
- 0.0437389 H |  2.016460 pF |   1.57 Hz |   2.59 Hz
- 0.0437389 H |  1.917794 pF |   1.57 Hz |   2.34 Hz
- 0.0437389 H |  1.839350 pF |   1.57 Hz |   2.15 Hz
- 0.0437389 H |  1.774710 pF |   1.57 Hz |   2.00 Hz
- 0.0437389 H |  1.720038 pF |   1.57 Hz |   1.88 Hz
- 0.0437389 H |  1.672868 pF |   1.57 Hz |   1.78 Hz
- 0.0437389 H |  1.631531 pF |   1.57 Hz |   1.69 Hz
- 0.0437389 H |  1.594844 pF |   1.57 Hz |   1.62 Hz
+Generated:
+      L      |       C      |    Fmin    |    Fmax
+-----------------------------------------------------
+ 0.0437389 H |  3.492610 pF |   1.57 MHz |   7.76 MHz
+ 0.0437389 H |  2.653810 pF |   1.57 MHz |   4.48 MHz
+ 0.0437389 H |  2.335649 pF |   1.57 MHz |   3.47 MHz
+ 0.0437389 H |  2.147216 pF |   1.57 MHz |   2.93 MHz
+ 0.0437389 H |  2.016460 pF |   1.57 MHz |   2.59 MHz
+ 0.0437389 H |  1.917794 pF |   1.57 MHz |   2.34 MHz
+ 0.0437389 H |  1.839350 pF |   1.57 MHz |   2.15 MHz
+ 0.0437389 H |  1.774710 pF |   1.57 MHz |   2.00 MHz
+ 0.0437389 H |  1.720038 pF |   1.57 MHz |   1.88 MHz
+ 0.0437389 H |  1.672868 pF |   1.57 MHz |   1.78 MHz
+ 0.0437389 H |  1.631531 pF |   1.57 MHz |   1.69 MHz
+ 0.0437389 H |  1.594844 pF |   1.57 MHz |   1.62 MHz
 
 Entry to modify[1-12]: 1
-New value for Cmax of entry 1 in pF: 370
+New Cmin in pF(empty - no modification): 20
+New Cmax in pF(empty - no modification): 
 
 Modified database:
-      L      |       C      |    Fmin   |    Fmax
----------------------------------------------------
- 0.0437389 H |  3.480751 pF |   1.56 Hz |   7.76 Hz
- 0.0437389 H |  2.653810 pF |   1.57 Hz |   4.48 Hz
- 0.0437389 H |  2.335649 pF |   1.57 Hz |   3.47 Hz
- 0.0437389 H |  2.147216 pF |   1.57 Hz |   2.93 Hz
- 0.0437389 H |  2.016460 pF |   1.57 Hz |   2.59 Hz
- 0.0437389 H |  1.917794 pF |   1.57 Hz |   2.34 Hz
- 0.0437389 H |  1.839350 pF |   1.57 Hz |   2.15 Hz
- 0.0437389 H |  1.774710 pF |   1.57 Hz |   2.00 Hz
- 0.0437389 H |  1.720038 pF |   1.57 Hz |   1.88 Hz
- 0.0437389 H |  1.672868 pF |   1.57 Hz |   1.78 Hz
- 0.0437389 H |  1.631531 pF |   1.57 Hz |   1.69 Hz
- 0.0437389 H |  1.594844 pF |   1.57 Hz |   1.62 Hz
+      L      |       C      |    Fmin    |    Fmax
+-----------------------------------------------------
+ 0.0437389 H |  3.250240 pF |   1.57 MHz |   6.72 MHz
+ 0.0437389 H |  2.653810 pF |   1.57 MHz |   4.48 MHz
+ 0.0437389 H |  2.335649 pF |   1.57 MHz |   3.47 MHz
+ 0.0437389 H |  2.147216 pF |   1.57 MHz |   2.93 MHz
+ 0.0437389 H |  2.016460 pF |   1.57 MHz |   2.59 MHz
+ 0.0437389 H |  1.917794 pF |   1.57 MHz |   2.34 MHz
+ 0.0437389 H |  1.839350 pF |   1.57 MHz |   2.15 MHz
+ 0.0437389 H |  1.774710 pF |   1.57 MHz |   2.00 MHz
+ 0.0437389 H |  1.720038 pF |   1.57 MHz |   1.88 MHz
+ 0.0437389 H |  1.672868 pF |   1.57 MHz |   1.78 MHz
+ 0.0437389 H |  1.631531 pF |   1.57 MHz |   1.69 MHz
+ 0.0437389 H |  1.594844 pF |   1.57 MHz |   1.62 MHz
+
