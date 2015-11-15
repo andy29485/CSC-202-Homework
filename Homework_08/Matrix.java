@@ -92,9 +92,10 @@ public class Matrix {
   // print the matrix
   public void print() {
     for(int i=0; i<this.rows; i++) {
+      System.out.print("  |");
       for(int j=0; j<this.cols; j++) 
-        System.out.printf("%6.2f ", this.get(i, j));
-      System.out.println();
+        System.out.printf("%7.2f ", this.get(i, j));
+      System.out.println("|");
     }
   }
 }
