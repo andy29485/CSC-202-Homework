@@ -77,23 +77,23 @@ public class Matrix {
 
   //multiply this by A(matrix)
   public Matrix multiply(Matrix A) {
-      if(this.rows != B.getColumns())
-        throw new RuntimeException("Illegal matrix dimensions");
-      Matrix B = new Matrix(this.rows, A.getColumns());
-      for(int i=0; i<B.getRows(); i++)
-        for(int j=0; j<B.getColumns(); j++)
-          for(int k=0; k<this.cols; k++)
-            B.set(i, j, B.get(i, j) + this.get(i, k)*A.get(k, j));
-      return B;
+    if(this.rows != B.getColumns())
+      throw new RuntimeException("Illegal matrix dimensions");
+    Matrix B = new Matrix(this.rows, A.getColumns());
+    for(int i=0; i<B.getRows(); i++)
+      for(int j=0; j<B.getColumns(); j++)
+        for(int k=0; k<this.cols; k++)
+          B.set(i, j, B.get(i, j) + this.get(i, k)*A.get(k, j));
+    return B;
   }
 
   //multiply this by k(scalar)
   public Matrix multiply(double k) {
-      Matrix A = new Matrix(this.rows, this.cols);
-      for(int i=0; i<this.rows; i++)
-        for(int j=0; j<this.cols; j++)
-          B.set(i, j, this.get(i, j) * k);
-      return B;
+    Matrix A = new Matrix(this.rows, this.cols);
+    for(int i=0; i<this.rows; i++)
+      for(int j=0; j<this.cols; j++)
+        B.set(i, j, this.get(i, j) * k);
+    return B;
   }
 
   //OUTPUT
