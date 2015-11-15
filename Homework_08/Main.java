@@ -34,19 +34,40 @@ public class  {
     int rows = Integer.valueOf(input.readLine()).intValue();
     System.out.print("Columns in matrix A: ");//get columns
     int cols = Integer.valueOf(input.readLine()).intValue();
-    Matrix A = new Matrix(rows, cols);//and create
+    Matrix A = new Matrix(rows, cols);//and create empty
+    //fill
+    for(int i=0; i<rows; i++) {
+      for(int j=0; j<cols; j++) {
+        System.out.printf("A[%02d][%02d] = ", i+1, j+1);
+        A.set(i, j, Double.valueOf(input.readLine()).doubleValue());
+      }
+    }
     
     System.out.print("Rows in matrix B: ");//get rows
     int rows = Integer.valueOf(input.readLine()).intValue();
     System.out.print("Columns in matrix B: ");//get columns
     int cols = Integer.valueOf(input.readLine()).intValue();
     Matrix B = new Matrix(rows, cols);//and create
+    //fill
+    for(int i=0; i<rows; i++) {
+      for(int j=0; j<cols; j++) {
+        System.out.printf("B[%02d][%02d] = ", i+1, j+1);
+        B.set(i, j, Double.valueOf(input.readLine()).doubleValue());
+      }
+    }
     
     System.out.print("Rows in matrix C: ");//get rows
     int rows = Integer.valueOf(input.readLine()).intValue();
     System.out.print("Columns in matrix C: ");//get columns
     int cols = Integer.valueOf(input.readLine()).intValue();
     Matrix C = new Matrix(rows, cols);//and create
+    //fill
+    for(int i=0; i<rows; i++) {
+      for(int j=0; j<cols; j++) {
+        System.out.printf("C[%02d][%02d] = ", i+1, j+1);
+        C.set(i, j, Double.valueOf(input.readLine()).doubleValue());
+      }
+    }
     
     //D = A + B
     Matrix D = A.add(B);
