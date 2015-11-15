@@ -66,15 +66,6 @@ public class Matrix {
     return B;
   }
 
-  //transpose this matrix(do not modify, return transposed)
-  public Matrix transpose() {
-    Matrix A = new Matrix(this.cols, this.rows);
-    for(int i=0; i<this.rows; i++)
-      for(int j=0; j<this.cols; j++)
-        A.set(j, i, this.get(i, j);
-    return A;
-  }
-
   //multiply this by A(matrix)
   public Matrix multiply(Matrix A) {
     //After reading the problem statement I realized that this was unnecessary
