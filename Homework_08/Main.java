@@ -5,10 +5,22 @@
 import java.io.*;
 
 /** Description:
-  *   - 
+  *   - Write a program to read 3 matrixes
+  *     - A, B, and C
+  *   - Create 2 more
+  *     - D = A + B
+  *     - E = A - B + C
+  *   - Read in a constant k
+  *   - Multiply E by k
   *
   * Assumptions:
-  *   - 
+  *   - When it says E*k, it means create another matrix
+  *   - A = [[ -1   2]
+  *          [-10   5]]
+  *   - B = [[  6  25]
+  *          [ 21  16]]
+  *   - C = [[ 10  15]
+  *          [  5   6]]
   */
 
 public class  {

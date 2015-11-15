@@ -77,6 +77,7 @@ public class Matrix {
 
   //multiply this by A(matrix)
   public Matrix multiply(Matrix A) {
+    //After reading the problem statement I realized that this was unnecessary
     if(this.rows != B.getColumns())
       throw new RuntimeException("Illegal matrix dimensions");
     Matrix B = new Matrix(this.rows, A.getColumns());
