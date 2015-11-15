@@ -24,7 +24,7 @@ import java.io.*;
   */
 
 public class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     //create an input reader object
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
@@ -44,9 +44,9 @@ public class Main {
     }
     
     System.out.print("Rows in matrix B: ");//get rows
-    int rows = Integer.valueOf(input.readLine()).intValue();
+    rows = Integer.valueOf(input.readLine()).intValue();
     System.out.print("Columns in matrix B: ");//get columns
-    int cols = Integer.valueOf(input.readLine()).intValue();
+    cols = Integer.valueOf(input.readLine()).intValue();
     Matrix B = new Matrix(rows, cols);//and create
     //fill
     for(int i=0; i<rows; i++) {
@@ -57,9 +57,9 @@ public class Main {
     }
     
     System.out.print("Rows in matrix C: ");//get rows
-    int rows = Integer.valueOf(input.readLine()).intValue();
+    rows = Integer.valueOf(input.readLine()).intValue();
     System.out.print("Columns in matrix C: ");//get columns
-    int cols = Integer.valueOf(input.readLine()).intValue();
+    cols = Integer.valueOf(input.readLine()).intValue();
     Matrix C = new Matrix(rows, cols);//and create
     //fill
     for(int i=0; i<rows; i++) {
