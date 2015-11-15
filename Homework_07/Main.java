@@ -12,21 +12,21 @@ import java.io.*;
   *     - Read all variables
   *     - Compute value of L
   *     - Compute value of C(should happen before prev step)
-  *     - change value of Cmax for entriy 1(0)
-  *     - change Fmin(see assumptions) based on inputed Cmax and save
+  *     - change value of Fmax for entriy 1(0)
+  *     - change Fmax(see assumptions) based on inputed Cmin and save
   *
   * Assumptions:
   *   - Calculations are in base units
-  *   - After looking up "Tuning Circuts" and finding formulas, I have come to
+  *   -*After looking up "Tuning Circuts" and finding formulas, I have come to
   *         to the conclusion that I coppied the instructions down incorrectly
   *         because after deriving Fmin/Fmax, I noticed that they were invers-
   *         ely, and not proportionally related to Cmin/Cmax respectively
-  *   - The database gets created/overwriten at the begining of /each/ run
+  *   - The database gets created/overwriten at the begining of each run
   *   - The database only saves over the part that was overwriten after asking
-  *         user for a new Cmax value
-  *   - The new Cmax value relates *only* to the one entry that it overwrites
-  *   - Cmax(and therefore Fmin) do not change - except for after the user set
-  *         a new calue for one of the Cmaxs, at which point both(in that row)
+  *         user for a new Cmax value and a new Cmin value
+  *   - The new Cmin value relates *only* to the one entry that it overwrites
+  *   - Cmin will be changed so that the Fmax value changes(not the Cmax value)
+  *   - Cmin will cna gea new calue for one of the Cmaxs, at which point both(in that row)
   *         get overwriten
   *   - Users /can/ chose, if they so desire, which row they wish to modify
   */
