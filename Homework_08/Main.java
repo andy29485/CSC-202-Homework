@@ -23,7 +23,7 @@ import java.io.*;
   *          [  5   6]]
   */
 
-public class  {
+public class Main {
   public static void main(String[] args) {
     //create an input reader object
     BufferedReader input
