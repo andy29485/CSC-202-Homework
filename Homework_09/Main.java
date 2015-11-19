@@ -15,7 +15,9 @@ import java.io.*;
   *       * button may be pressed to extend time
   *
   * Assumptions:
-  *   - 
+  *   - print out every time elevator does something
+  *     * move up/down a floor
+  *     * open/close door
   */
 
 public class Main {
