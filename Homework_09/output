@@ -1,0 +1,89 @@
+Enter floor: 13
+No such floor: 13
+Enter floor: 28
+No such floor: 28
+Enter floor: 0
+No such floor: 0
+Enter floor: -1
+No such floor: -1
+Enter floor: 20
+Moving UP, at floor 1
+Moving UP, at floor 2
+Moving UP, at floor 3
+Moving UP, at floor 4
+Moving UP, at floor 5
+Moving UP, at floor 6
+Moving UP, at floor 7
+Moving UP, at floor 8
+Moving UP, at floor 9
+Moving UP, at floor 10
+Moving UP, at floor 11
+Moving UP, at floor 12
+Moving UP, at floor 13
+Moving UP, at floor 14
+Moving UP, at floor 15
+Moving UP, at floor 16
+Moving UP, at floor 17
+Moving UP, at floor 18
+Moving UP, at floor 19
+Stopping, at floor 20(input o to keep open)
+Doors openning, at floor 20
+Doors closing, at floor 20
+Enter floor: 12
+Moving DOWN, at floor 20
+Moving DOWN, at floor 19
+Moving DOWN, at floor 18
+Moving DOWN, at floor 17
+Moving DOWN, at floor 16
+Moving DOWN, at floor 15
+Moving DOWN, at floor 14
+Moving DOWN, at floor 13
+Stopping, at floor 12(input o to keep open)
+Doors openning, at floor 12
+Doors closing, at floor 12
+Returning to first floor
+Moving DOWN, at floor 12(input o to keep open)
+Moving DOWN, at floor 11(input o to keep open)
+Moving DOWN, at floor 10(input o to keep open)
+Moving DOWN, at floor 9(input o to keep open)
+Moving DOWN, at floor 8(input o to keep open)
+Moving DOWN, at floor 7(input o to keep open)
+Moving DOWN, at floor 6(input o to keep open)
+Moving DOWN, at floor 5(input o to keep open)
+Moving DOWN, at floor 4(input o to keep open)
+Moving DOWN, at floor 3(input o to keep open)
+Moving DOWN, at floor 2(input o to keep open)
+Enter floor: 26
+Enter password: wrong password
+Wrong password, access denied
+Enter floor: 26
+Enter password: 12345
+Moving UP, at floor 1
+Moving UP, at floor 2
+Moving UP, at floor 3
+Moving UP, at floor 4
+Moving UP, at floor 5
+Moving UP, at floor 6
+Moving UP, at floor 7
+Moving UP, at floor 8
+Moving UP, at floor 9
+Moving UP, at floor 10
+Moving UP, at floor 11
+Moving UP, at floor 12
+Moving UP, at floor 13
+Moving UP, at floor 14
+Moving UP, at floor 15
+Moving UP, at floor 16
+Moving UP, at floor 17
+Moving UP, at floor 18
+Moving UP, at floor 19
+Moving UP, at floor 20
+Moving UP, at floor 21
+Moving UP, at floor 22
+Moving UP, at floor 23
+Moving UP, at floor 24
+Moving UP, at floor 25
+Stopping, at floor 26(input o to keep open)
+Doors openning, at floor 26
+Doors closing, at floor 26
+Enter floor: ^C
