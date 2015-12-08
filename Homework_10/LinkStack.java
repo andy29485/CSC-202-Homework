@@ -14,15 +14,21 @@ public class LinkStack {
   }
 
   public void push(int value) {
-    //TODO
+    Digit tmp = new Digit(value);
+    this.topp.setNext(tmp);
+    tmp.setPrev(this.topp);
+    this.topp = tmp;
   }
 
   public int pop() {
-    //TODO
+    this.topp.getPrev().setNext(null);
+    Digit tmp = this.topp;
+    this.topp = this.topp.getPrev();
+    return tmp.getValue();
   }
 
   public int peek() {
-    //TODO
+    return this.topp.getValue();
   }
 
   /*No need - main only excepts 5 digits
