@@ -11,19 +11,19 @@ public class ArrayStack {
     this.nums = new int[5];
   }
 
-  public boolean empty() {
+  public boolean empty() {//check if the pointer points to an element in array
     return this.topp < 0;
   }
 
-  public void push(int value) {
+  public void push(int value) {//append to array AFTER incrementing top pointer
     this.nums[++this.topp] = value;
   }
 
-  public int pop() {
+  public int pop() {//remove and return top value, BEFORE decrementing pointer
     return this.nums[this.topp--];
   }
 
-  public int peek() {
+  public int peek() {//return top value, WITHOUT changing pointer
     return this.nums[this.topp];
   }
 

@@ -9,7 +9,7 @@ public class LinkStack {
     this.topp = null;
   }
 
-  public boolean empty() {
+  public boolean empty() {//return true if topp doesn't point to a digit
     return this.topp == null;
   }
 
@@ -32,7 +32,7 @@ public class LinkStack {
     return tmp.getValue();
   }
 
-  public int peek() {
+  public int peek() {//return top value, WITHOUT changing pointer
     return this.topp.getValue();
   }
 
