@@ -16,15 +16,15 @@ public class ArrayStack {
   }
 
   public void push(int value) {
-    //TODO
+    this.nums[++this.topp] = value;
   }
 
   public int pop() {
-    //TODO
+    return this.nums[this.topp--];
   }
 
   public int peek() {
-    //TODO
+    return this.nums[this.topp];
   }
 
   /*No need - main only excepts 5 digits
