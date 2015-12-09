@@ -4,12 +4,28 @@
 
 import java.io.*;
 
+/** Description:
+  *   - Read a five digit number
+  *   - Extract each digit and put in stack
+  *     - use array implementation
+  *     - AND linked list implementation
+  *   - Display in reverse order (POP)
+  *
+  * Assumptions:
+  *   - Seperate numbers will be inputted for the Array and Linked List Stacks
+  *   - Numbers will always be 5 digits, the user will zero pad if needed
+  *   - When printing, the digits will appear on one line
+  *   - Java uses Unicode(which is ASCII compatible)
+  *   - Only ints will be used
+  */
+
 public class Main {
   public static void main(String[] args) throws IOException {
     //create an input reader object
     BufferedReader input
             = new BufferedReader(new InputStreamReader(System.in));
 
+    //Create the stacks and a String object to store the input(temporarily)
     ArrayStack as = new ArrayStack();
     LinkStack  ls = new LinkStack();
     String     num;
